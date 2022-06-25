@@ -138,35 +138,9 @@ Follow.belongsTo(User, {
     allowNull: false
   }
 });
-// User.hasMany(Follow, {
-//   constraints: true,
-//   onDelete: 'CASCADE',
-//   foreignKey: {
-//     name: 'followerId',
-//     allowNull: false
-//   }
-// });
-// User.hasMany(Follow, {
-//   constraints: true,
-//   onDelete: 'CASCADE',
-//   foreignKey: {
-//     name: 'followeeId',
-//     allowNull: false
-//   }
-// });
-Follow.belongsTo(User, {
-  constraints: true,
-  onDelete: 'CASCADE',
-  foreignKey: {
-    name: 'followeeId',
-    allowNull: false
-  }
-});
-// User.hasMany(Follow);
 
 db
   .sync()
-  // .sync({ force: true })
   .then(() => {
     return client.connect();
   })
